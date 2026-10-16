@@ -1,21 +1,23 @@
 # रङ र रेखा Studio
 
-Portfolio site for wall art (भित्ते कला), tattoo (ट्याटु) and canvas (क्यानभास) work.
+Portfolio site for Sagar Niraula — wall art (भित्ते कला), tattoo (ट्याटु)
+and canvas (क्यानभास) work, Nepal.
 
-A single self-contained `index.html` — no build step, no dependencies.
-Open it in a browser, or serve the folder.
+Live at **https://sagararts23.github.io/**
 
-## Live site
+## Layout
 
-Enable **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
-The site then appears at `https://<username>.github.io/rang-ra-rekha/`.
+- `index.html` — the whole site, self-contained. No build step.
+- `img/` — artwork photos (max 1600px, ~80% JPEG)
+- `video/` — studio clips (720p30 H.264, no audio)
+
+Pushing to `main` redeploys automatically.
 
 ## Still to fill in
 
-The page ships with gold placeholder markers (`नमूना`, `... हाल्नु`). Replace:
+Gold placeholder markers remain for:
 
-- Your name, and the city in the hero
+- City in the hero
 - The three rates under सेवा
-- Real photos of your work in the gallery (replace the generated `<canvas>` placeholders)
-- Your portrait and the परिचय paragraph
-- Phone / WhatsApp, Instagram handle, email, studio address
+- The परिचय paragraph (training, year went full-time)
+- Instagram handle, email, studio address

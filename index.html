@@ -70,7 +70,7 @@ nav a:hover{color:var(--ink);background:var(--bg-2)}
 .tag{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
   border:1px solid var(--line);padding:5px 11px;border-radius:999px}
 .heroart{position:relative;aspect-ratio:4/5;background:var(--bg-2);border:1px solid var(--line);min-width:0}
-.heroart canvas{width:100%;height:100%;display:block}
+.heroart img{width:100%;height:100%;object-fit:cover;display:block}
 .sign{position:absolute;left:-1px;bottom:18px;background:var(--vermilion);color:#fff6f2;font-size:10.5px;
   font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:6px 12px}
 
@@ -95,25 +95,24 @@ nav a:hover{color:var(--ink);background:var(--bg-2)}
 .filters button{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
   background:none;border:1px solid var(--line);color:var(--ink-soft);padding:8px 15px;border-radius:999px;cursor:pointer;font-family:var(--body)}
 .filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.grid{grid-template-columns:1fr}}
-figure{margin:0;background:var(--bg-2);border:1px solid var(--line);min-width:0;position:relative;overflow:hidden}
-figure.tall{grid-row:span 2}
-figure canvas{width:100%;display:block;aspect-ratio:4/5;max-width:100%}
-figure.tall canvas{aspect-ratio:4/7}
+.grid{column-count:3;column-gap:14px}
+@media (max-width:980px){.grid{column-count:2}}
+@media (max-width:560px){.grid{column-count:1}}
+figure{margin:0 0 14px;background:var(--bg-2);border:1px solid var(--line);position:relative;overflow:hidden;break-inside:avoid}
+figure img{width:100%;height:auto;display:block}
 figcaption{padding:13px 15px 15px;border-top:1px solid var(--line)}
 figcaption .t{font-family:var(--display);font-size:19px;line-height:1.15}
 figcaption .m{font-size:12.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums;margin-top:3px}
-.sample{position:absolute;top:10px;right:10px;background:color-mix(in srgb,var(--bg) 78%,transparent);
-  border:1px dashed var(--gold);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.16em;
-  text-transform:uppercase;padding:4px 8px}
+.films{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+@media (max-width:700px){.films{grid-template-columns:1fr}}
+.films figure{margin:0}
+.films video{width:100%;height:auto;display:block;background:#000}
 
 /* ---- about ---- */
 #about .inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(26px,5vw,64px);align-items:start}
 @media (max-width:820px){#about .inner{grid-template-columns:1fr}}
-.portrait{aspect-ratio:3/4;background:var(--bg-2);border:1px solid var(--line);display:grid;place-items:center;
-  text-align:center;padding:24px;color:var(--ink-soft);font-size:13px;max-width:100%}
+.portrait{aspect-ratio:3/4;background:var(--bg-2);border:1px solid var(--line);max-width:100%;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);
   border:1px solid var(--line);margin-top:26px}
 .stats div{background:var(--bg);padding:17px 16px;min-width:0}
@@ -179,7 +178,7 @@ footer{border-top:1px solid var(--line);padding-block:30px;color:var(--ink-soft)
         <span class="tag">क्यानभास / Canvas</span><span class="tag">कस्टम डिजाइन</span><span class="tag">लाइभ आर्ट</span>
       </div>
     </div>
-    <div class="heroart"><canvas data-art="mandala" width="760" height="950"></canvas><span class="sign">हस्तनिर्मित</span></div>
+    <div class="heroart"><img src="img/ganesh-canvas.jpg" alt="गणेश — क्यानभासमा एक्रिलिक" width="1290" height="1265"><span class="sign">हस्तनिर्मित</span></div>
   </section>
 
   <section id="services">
@@ -213,13 +212,21 @@ footer{border-top:1px solid var(--line);padding-block:30px;color:var(--ink-soft)
       <button data-f="tattoo" aria-pressed="false">ट्याटु</button>
       <button data-f="canvas" aria-pressed="false">क्यानभास</button>
     </div>
-    <div class="note"><b>यी तस्बिरहरू नमूना हुन्।</b> हरेक खाली ठाउँमा तपाईंको आफ्नै कामको फोटो हाल्नुहोस् — एउटै उज्यालो, सिधा अगाडिबाट खिचेको, १२–१५ उत्कृष्ट काम। तल नाप र माध्यम लेख्न बिर्सनुहुन्न।</div>
     <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="films">
+    <div class="eyebrow">स्टुडियोबाट · From the studio</div>
+    <h2>काम हुँदै</h2>
+    <div class="films">
+      <figure><video src="video/studio-1.mp4" poster="img/studio-1-poster.jpg" controls muted loop playsinline preload="none"></video></figure>
+      <figure><video src="video/studio-2.mp4" poster="img/studio-2-poster.jpg" controls muted loop playsinline preload="none"></video></figure>
+    </div>
   </section>
 
   <section id="about">
     <div class="inner">
-      <div class="portrait">तपाईंको फोटो यहाँ<br><span class="todo">फोटो हाल्नु</span></div>
+      <div class="portrait"><img src="img/artist-at-work.jpg" alt="सागर निरौला भित्ते चित्र बनाउँदै" loading="lazy" decoding="async"></div>
       <div>
         <div class="eyebrow">परिचय · About</div>
         <h2>रङसँगै हुर्केको हात</h2>
@@ -297,163 +304,37 @@ footer{border-top:1px solid var(--line);padding-block:30px;color:var(--ink-soft)
 <script>
 (function(){
 'use strict';
-/* ---------- generative placeholder artwork (stands in for real photos) ---------- */
-function rng(seed){ var s=seed>>>0; return function(){ s=(s*1664525+1013904223)>>>0; return s/4294967296; }; }
-function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
-
-function ground(c,g,r){
-  var w=c.width,h=c.height;
-  var bg=g.createLinearGradient(0,0,w,h);
-  bg.addColorStop(0,'#1a1714'); bg.addColorStop(.55,'#241f1a'); bg.addColorStop(1,'#15120f');
-  g.fillStyle=bg; g.fillRect(0,0,w,h);
-  g.globalAlpha=.05; g.fillStyle='#fff';
-  for(var i=0;i<1800;i++){ g.fillRect(r()*w,r()*h,1.3,1.3); }
-  g.globalAlpha=1;
-}
-var INK='rgba(244,237,224,';
-function mandala(c,g,r,hue){
-  var w=c.width,h=c.height,cx=w/2,cy=h/2,R=Math.min(w,h)*.40;
-  g.strokeStyle=hue; g.lineWidth=Math.max(1.1,w/520); g.globalAlpha=.9;
-  for(var ring=1;ring<=7;ring++){
-    var rr=R*ring/7, pet=6*ring;
-    g.beginPath();
-    for(var k=0;k<=360;k++){
-      var a=k*Math.PI/180, rad=rr+Math.sin(a*pet)*rr*0.07;
-      var x=cx+Math.cos(a)*rad, y=cy+Math.sin(a)*rad;
-      k?g.lineTo(x,y):g.moveTo(x,y);
-    }
-    g.closePath(); g.globalAlpha=.25+ring*0.08; g.stroke();
-  }
-  g.globalAlpha=.8; g.strokeStyle=INK+'.75)';
-  for(var s=0;s<24;s++){ var a2=s*Math.PI/12;
-    g.beginPath(); g.moveTo(cx+Math.cos(a2)*R*0.18,cy+Math.sin(a2)*R*0.18);
-    g.lineTo(cx+Math.cos(a2)*R,cy+Math.sin(a2)*R); g.stroke(); }
-  g.beginPath(); g.arc(cx,cy,R*0.12,0,7); g.fillStyle=hue; g.globalAlpha=.9; g.fill();
-  g.globalAlpha=1;
-}
-function himal(c,g,r,hue){
-  var w=c.width,h=c.height;
-  for(var layer=0;layer<4;layer++){
-    var base=h*(0.56+layer*0.12), amp=h*(0.22-layer*0.04);
-    g.beginPath(); g.moveTo(0,h);
-    for(var x=0;x<=w;x+=w/9){
-      g.lineTo(x, base - Math.abs(Math.sin(x/w*3.1+layer))*amp - r()*amp*0.25);
-    }
-    g.lineTo(w,h); g.closePath();
-    g.fillStyle=layer%2? 'rgba(244,237,224,'+(0.07+layer*0.05)+')' : hue.replace(')',', '+(0.18+layer*0.1)+')').replace('rgb','rgba');
-    g.globalAlpha=1; g.fill();
-    g.strokeStyle=INK+(0.5-layer*0.1)+')'; g.lineWidth=Math.max(1,w/600); g.stroke();
-  }
-  g.beginPath(); g.arc(w*0.74,h*0.22,Math.min(w,h)*0.085,0,7); g.strokeStyle=hue; g.lineWidth=w/300; g.stroke();
-}
-function eye(c,g,r,hue){
-  var w=c.width,h=c.height,cx=w/2,cy=h/2,R=Math.min(w,h)*0.3;
-  g.lineWidth=Math.max(1.4,w/360); g.strokeStyle=INK+'.85)';
-  g.beginPath(); g.moveTo(cx-R*1.5,cy); g.quadraticCurveTo(cx,cy-R*1.2,cx+R*1.5,cy);
-  g.quadraticCurveTo(cx,cy+R*1.2,cx-R*1.5,cy); g.stroke();
-  g.beginPath(); g.arc(cx,cy,R*0.55,0,7); g.stroke();
-  g.beginPath(); g.arc(cx,cy,R*0.26,0,7); g.fillStyle=hue; g.fill();
-  g.strokeStyle=hue; g.lineWidth=Math.max(1,w/520);
-  for(var k=0;k<36;k++){ var a=k*Math.PI/18, l=R*(0.65+ (k%3)*0.12);
-    g.beginPath(); g.moveTo(cx+Math.cos(a)*R*0.58,cy+Math.sin(a)*R*0.58);
-    g.lineTo(cx+Math.cos(a)*l,cy+Math.sin(a)*l); g.stroke(); }
-  g.strokeStyle=INK+'.4)';
-  for(var t=1;t<=3;t++){ g.beginPath();
-    g.moveTo(cx-R*(1.5+t*0.18),cy); g.quadraticCurveTo(cx,cy-R*(1.2+t*0.3),cx+R*(1.5+t*0.18),cy); g.stroke(); }
-}
-function lotus(c,g,r,hue){
-  var w=c.width,h=c.height,cx=w/2,cy=h*0.62,R=Math.min(w,h)*0.33;
-  g.lineWidth=Math.max(1.3,w/420);
-  for(var ring=0;ring<3;ring++){
-    var n=7+ring*4, rr=R*(1-ring*0.26);
-    for(var i=0;i<n;i++){
-      var a=-Math.PI/2 + (i-(n-1)/2)*(Math.PI/(n+1));
-      g.beginPath(); g.moveTo(cx,cy);
-      g.quadraticCurveTo(cx+Math.cos(a-0.22)*rr*1.05, cy+Math.sin(a-0.22)*rr*1.05, cx+Math.cos(a)*rr, cy+Math.sin(a)*rr);
-      g.quadraticCurveTo(cx+Math.cos(a+0.22)*rr*1.05, cy+Math.sin(a+0.22)*rr*1.05, cx,cy);
-      g.strokeStyle= ring===1?hue:INK+'.7)'; g.stroke();
-    }
-  }
-  g.strokeStyle=INK+'.35)'; g.lineWidth=w/500;
-  g.beginPath(); g.moveTo(cx,cy); g.lineTo(cx,h*0.96); g.stroke();
-}
-function sunmoon(c,g,r,hue){
-  var w=c.width,h=c.height,cx=w/2,R=Math.min(w,h)*0.2;
-  g.strokeStyle=INK+'.8)'; g.lineWidth=Math.max(1.2,w/430);
-  g.beginPath(); g.arc(cx,h*0.33,R,0,7); g.stroke();
-  for(var k=0;k<16;k++){ var a=k*Math.PI/8;
-    g.beginPath(); g.moveTo(cx+Math.cos(a)*R*1.1,h*0.33+Math.sin(a)*R*1.1);
-    g.lineTo(cx+Math.cos(a)*R*1.42,h*0.33+Math.sin(a)*R*1.42); g.stroke(); }
-  g.strokeStyle=hue; g.lineWidth=Math.max(1.6,w/300);
-  g.beginPath(); g.arc(cx,h*0.72,R,Math.PI*0.28,Math.PI*1.72); g.stroke();
-  g.strokeStyle=INK+'.3)'; g.lineWidth=w/600;
-  g.beginPath(); g.moveTo(w*0.12,h*0.52); g.lineTo(w*0.88,h*0.52); g.stroke();
-}
-function strokes(c,g,r,hue){
-  var w=c.width,h=c.height,i,k;
-  for(i=0;i<9;i++){
-    var y=h*(0.12+i*0.093), amp=h*0.05*(0.4+r());
-    g.beginPath(); g.moveTo(w*0.06,y);
-    for(k=0;k<=10;k++){ var x=w*0.06+ (w*0.88)*k/10;
-      g.lineTo(x, y + Math.sin(k*0.9+i)*amp); }
-    g.lineWidth=Math.max(2,(w/26)*(0.25+r()*0.8));
-    g.strokeStyle= i%3===0 ? hue : INK+(0.18+r()*0.4)+')';
-    g.lineCap='round'; g.stroke();
-  }
-}
-function glyph(c,g,r,hue,ch){
-  var w=c.width,h=c.height;
-  g.fillStyle=hue; g.textAlign='center'; g.textBaseline='middle';
-  g.font='400 '+Math.round(Math.min(w,h)*0.52)+'px "Rozha One", serif';
-  g.fillText(ch||'ॐ',w/2,h*0.5);
-  g.strokeStyle=INK+'.3)'; g.lineWidth=Math.max(1,w/600);
-  for(var k=0;k<5;k++){ var rr=Math.min(w,h)*(0.2+k*0.08);
-    g.beginPath(); g.arc(w/2,h*0.5,rr,0,7); g.stroke(); }
-}
-var ART={mandala:mandala,himal:himal,eye:eye,lotus:lotus,sunmoon:sunmoon,strokes:strokes,
-         om:function(c,g,r,hue){ glyph(c,g,r,hue,'ॐ'); }, ka:function(c,g,r,hue){ glyph(c,g,r,hue,'क'); }};
-
-function render(cvs){
-  var kind=cvs.dataset.art||'mandala', seed=parseInt(cvs.dataset.seed||'7',10);
-  var box=cvs.getBoundingClientRect();
-  var dpr=Math.min(2,window.devicePixelRatio||1);
-  var ar=cvs.dataset.ar==='tall'?7/4:5/4;
-  var w=Math.max(220,Math.round((box.width||300)*dpr));
-  cvs.width=w; cvs.height=Math.round(w*ar);
-  var g=cvs.getContext('2d'), r=rng(seed);
-  ground(cvs,g,r);
-  var hues=['#e8573f','#6183f2','#cfa24a','#d9d2c4','#e8573f','#6183f2'];
-  (ART[kind]||mandala)(cvs,g,rng(seed*31+5),hues[seed%hues.length]);
-  /* paper edge */
-  g.strokeStyle='rgba(255,255,255,.07)'; g.lineWidth=2; g.strokeRect(1,1,cvs.width-2,cvs.height-2);
-}
-
 /* ---------- gallery ---------- */
 var ITEMS=[
- {t:'मण्डल भित्तेचित्र',m:'एक्रिलिक भित्तामा · ८ × १२ फिट · २०२५',c:'wall',a:'mandala',tall:true},
- {t:'तेस्रो नेत्र',m:'फाइन लाइन ट्याटु · पाखुरा · २०२५',c:'tattoo',a:'eye'},
- {t:'हिमाल रेखा',m:'क्यानभासमा एक्रिलिक · ३६ × ४८ इन्च · २०२४',c:'canvas',a:'himal'},
- {t:'कमल',m:'ब्ल्याकवर्क ट्याटु · काँध · २०२५',c:'tattoo',a:'lotus'},
- {t:'चन्द्र–सूर्य',m:'क्याफेको भित्ता · १० × ७ फिट · २०२४',c:'wall',a:'sunmoon',tall:true},
- {t:'ॐ',m:'कस्टम लेटरिङ ट्याटु · २०२५',c:'tattoo',a:'om'},
- {t:'रङको लहर',m:'मिक्स मिडिया · २४ × ३० इन्च · २०२५',c:'canvas',a:'strokes'},
- {t:'अक्षर · क',m:'देवनागरी टाइपोग्राफी भित्ता · २०२४',c:'wall',a:'ka'},
- {t:'पाखा',m:'क्यानभासमा एक्रिलिक · ३० × ३० इन्च · २०२३',c:'canvas',a:'mandala'}
+ {t:'दरबार स्क्वायर',m:'सडक भित्ते चित्र',c:'wall',f:'durbar-mural-wide.jpg'},
+ {t:'गणेश',m:'क्यानभासमा एक्रिलिक',c:'canvas',f:'ganesh-canvas.jpg'},
+ {t:'आँखा',m:'भित्ते चित्र',c:'wall',f:'eye-mural.jpg'},
+ {t:'नेवारी नारी',m:'भित्ते चित्र',c:'wall',f:'newari-woman-wall.jpg'},
+ {t:'शिव–पार्वती',m:'क्यानभासमा एक्रिलिक',c:'canvas',f:'shiva-parvati.jpg'},
+ {t:'दृष्टि',m:'क्यानभास · एक्रिलिक र फ्लुइड पोर',c:'canvas',f:'eye-brain.jpg'},
+ {t:'राजा',m:'भित्ते चित्र',c:'wall',f:'king-mural.jpg'},
+ {t:'गणेश',m:'ट्याटु · ढाड',c:'tattoo',f:'ganesh-tattoo.jpg'},
+ {t:'वृद्ध',m:'क्यानभासमा एक्रिलिक',c:'canvas',f:'old-man.jpg'},
+ {t:'नेवारी नारी र बुद्ध',m:'भित्ते चित्र',c:'wall',f:'newari-woman-buddha.jpg'},
+ {t:'प्रवाह',m:'फ्लुइड पोर · क्यानभास',c:'canvas',f:'pour-abstract.jpg'},
+ {t:'अनुहार',m:'फ्लुइड पोर · क्यानभास',c:'canvas',f:'pour-face.jpg'},
+ {t:'शिव–पार्वती · स्टुडियोमा',m:'काम हुँदै',c:'canvas',f:'shiva-parvati-studio.jpg'}
 ];
 var grid=document.getElementById('grid');
 ITEMS.forEach(function(it,i){
   var fig=document.createElement('figure');
-  if(it.tall) fig.className='tall';
   fig.dataset.cat=it.c;
-  var cvs=document.createElement('canvas');
-  cvs.dataset.art=it.a; cvs.dataset.seed=String(i*7+3); if(it.tall) cvs.dataset.ar='tall';
-  cvs.setAttribute('role','img'); cvs.setAttribute('aria-label',it.t+' — नमूना तस्बिर');
-  fig.appendChild(cvs);
+  var img=document.createElement('img');
+  img.src='img/'+it.f;
+  img.alt=it.t+' — '+it.m;
+  img.loading = i<3 ? 'eager' : 'lazy';
+  img.decoding='async';
+  fig.appendChild(img);
   var cap=document.createElement('figcaption');
   cap.innerHTML='<div class="t"></div><div class="m"></div>';
-  cap.querySelector('.t').textContent=it.t; cap.querySelector('.m').textContent=it.m;
+  cap.querySelector('.t').textContent=it.t;
+  cap.querySelector('.m').textContent=it.m;
   fig.appendChild(cap);
-  var b=document.createElement('span'); b.className='sample'; b.textContent='नमूना'; fig.appendChild(b);
   grid.appendChild(fig);
 });
 document.querySelectorAll('.filters button').forEach(function(btn){
@@ -465,11 +346,6 @@ document.querySelectorAll('.filters button').forEach(function(btn){
     });
   });
 });
-
-/* ---------- draw everything at rest ---------- */
-function drawAll(){ document.querySelectorAll('canvas').forEach(render); }
-drawAll();
-var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(drawAll,220); });
 
 /* ---------- booking form -> copyable message ---------- */
 var out=document.getElementById('out');
