@@ -21,3 +21,14 @@ Gold placeholder markers remain for:
 - The three rates under सेवा
 - The परिचय paragraph (training, year went full-time)
 - Instagram handle, email, studio address
+
+## QR
+
+`qr/` holds QR codes pointing at the live site:
+
+- `qr-card.png` — share card for Instagram / WhatsApp (1080×1350)
+- `qr-logo.png` — QR with the brush mark in the middle
+- `qr-print.png` — plain black on white, 2000px, for printing
+- `qr.svg` — vector, scales to any size
+
+All are error-correction level H, so the centre mark costs no reliability.
