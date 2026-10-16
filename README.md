@@ -1,6 +1,6 @@
 # रंगसागर Studio
 
-Portfolio site for Sagar Niraula (रंगसागर) — wall art (भित्ते कला), tattoo (ट्याटु)
+Bilingual (नेपाली / English) portfolio site for Sagar Niraula (रंगसागर) — wall art (भित्ते कला), tattoo (ट्याटु)
 and canvas (क्यानभास) work, Nepal.
 
 Live at **https://sagararts23.github.io/**
