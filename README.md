@@ -1,6 +1,6 @@
-# रङ र रेखा Studio
+# रङसागर Studio
 
-Portfolio site for Sagar Niraula — wall art (भित्ते कला), tattoo (ट्याटु)
+Portfolio site for Sagar Niraula (रङसागर) — wall art (भित्ते कला), tattoo (ट्याटु)
 and canvas (क्यानभास) work, Nepal.
 
 Live at **https://sagararts23.github.io/**
