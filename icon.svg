@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="रङसागर">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="रंगसागर">
   <rect width="64" height="64" rx="14" fill="#13110f"/>
-  <g fill="none" stroke-width="7.5" stroke-linecap="round">
-    <path d="M8 20q12-11 24 0t24 0" stroke="#cfa24a"/>
-    <path d="M8 32q12-11 24 0t24 0" stroke="#6183f2"/>
-    <path d="M8 44q12-11 24 0t24 0" stroke="#e8573f"/>
-  </g>
+  <path d="M29 15 C 44 13, 49 24, 42 33" fill="none" stroke="#6183f2" stroke-width="4" stroke-linecap="round"/>
+  <rect x="22.5" y="12" width="7" height="26" rx="3" fill="#cfa24a"/>
+  <rect x="21" y="35" width="10" height="7" rx="1.5" fill="#9c9284"/>
+  <path d="M21 42 H31 L26 58 Z" fill="#e8573f"/>
 </svg>
